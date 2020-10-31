@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://admin.wbf.ink/2020/10/27/hello-world/</loc>
+    <loc>https://admin.wbf.ink/2020/10/31/android-draw/</loc>
     
-    <lastmod>2020-10-27</lastmod>
+    <lastmod>2020-10-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://admin.wbf.ink/tags/index.html</loc>
+    
+    <lastmod>2020-10-30</lastmod>
     
   </url>
   
   <url>
     <loc>https://admin.wbf.ink/categories/index.html</loc>
     
-    <lastmod>2020-10-27</lastmod>
+    <lastmod>2020-10-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://admin.wbf.ink/tags/index.html</loc>
+    <loc>https://admin.wbf.ink/2020/10/27/hello-world/</loc>
     
     <lastmod>2020-10-27</lastmod>
     
@@ -25,12 +32,26 @@
 
   <url>
     <loc>https://admin.wbf.ink/</loc>
-    <lastmod>2020-10-29</lastmod>
+    <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
+  <url>
+    <loc>https://admin.wbf.ink/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/</loc>
+    <lastmod>2020-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://admin.wbf.ink/categories/Android/</loc>
+    <lastmod>2020-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
