@@ -1,0 +1,1904 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.3.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.3.0" type="image/png" sizes="32x32"><meta name="description" content="微信小程序介绍                        微信⼩程序，简称⼩程序，英⽂名 Mini Program ，是⼀种不需要下载安装即可使⽤的应⽤，它实现了应⽤“触⼿可及”的梦想，⽤⼾扫⼀扫或搜⼀下即可打开应⽤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一个小程序">
+<meta property="og:url" content="https://admin.wbf.ink/2020/11/11/wxxcx/index.html">
+<meta property="og:site_name" content="Java毁青春">
+<meta property="og:description" content="微信小程序介绍                        微信⼩程序，简称⼩程序，英⽂名 Mini Program ，是⼀种不需要下载安装即可使⽤的应⽤，它实现了应⽤“触⼿可及”的梦想，⽤⼾扫⼀扫或搜⼀下即可打开应⽤">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab5a421cd1bbb86be939e9.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab5a8f1cd1bbb86be948b7.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab5f8d1cd1bbb86bea3359.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab5fb71cd1bbb86bea3ce2.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab60271cd1bbb86bea5270.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab62911cd1bbb86beabdc6.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab62f71cd1bbb86bead040.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab63371cd1bbb86beadacc.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab60271cd1bbb86bea5270.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab84aa1cd1bbb86bf2016c.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab88d51cd1bbb86bf30fe6.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fab8f331cd1bbb86bf4da86.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5facf23b1cd1bbb86b4d91e4.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae45631cd1bbb86b9630eb.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae48b21cd1bbb86b96feb5.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae4a901cd1bbb86b977d1a.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae4ff11cd1bbb86b99317a.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae50ad1cd1bbb86b995dc1.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae50f61cd1bbb86b996ef6.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae519c1cd1bbb86b999e2c.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5fae51e61cd1bbb86b99b7ba.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5faf3f0b1cd1bbb86bcfaf9e.png">
+<meta property="article:published_time" content="2020-11-11T06:51:43.000Z">
+<meta property="article:modified_time" content="2020-11-14T02:25:58.565Z">
+<meta property="article:author" content="王克斌">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.downk.cc/item/5fab5a421cd1bbb86be939e9.png"><title>第一个小程序 | Java毁青春</title><link ref="canonical" href="https://admin.wbf.ink/2020/11/11/wxxcx/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.3.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: ["google","bing","baidu"],
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: true,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Java毁青春" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Java毁青春</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">第一个小程序</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-11-14</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2020/11/11/wxxcx/" data-flag-title="第一个小程序"><span class="post-meta-item__icon"><i class="fas fa-eye"></i></span><span class="post-meta-item__info">阅读次数</span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body">
+        <h2 id="微信小程序介绍"   >
+          <a href="#微信小程序介绍" class="heading-link"><i class="fas fa-link"></i></a>微信小程序介绍</h2>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab5a421cd1bbb86be939e9.png" >
+      </p>
+<p>微信⼩程序，简称<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B0%8F%E7%A8%8B%E5%BA%8F" >⼩程序</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，英⽂名 Mini Program ，是⼀种不需要下载安装即可使⽤的应⽤，它实现了应⽤“触⼿可及”的梦想，⽤⼾扫⼀扫或搜⼀下即可打开应⽤ </p>
+<a id="more"></a>
+
+
+        <h2 id="为什么学微信⼩程序？"   >
+          <a href="#为什么学微信⼩程序？" class="heading-link"><i class="fas fa-link"></i></a>为什么学微信⼩程序？</h2>
+      <ol>
+<li> 微信有海量⽤⼾，⽽且粘性很⾼，在微信⾥开发产品更容易触达⽤⼾。</li>
+<li> 推⼴App 或公众号的成本太⾼。 </li>
+<li> 开发适配成本低。</li>
+<li> 容易⼩规模试错，然后快速迭代。</li>
+<li> 跨平台。</li>
+</ol>
+
+        <h2 id="微信⼩程序历史"   >
+          <a href="#微信⼩程序历史" class="heading-link"><i class="fas fa-link"></i></a>微信⼩程序历史</h2>
+      <ul>
+<li>2016年1⽉11⽇，微信之⽗张⼩⻰时隔多年的公开亮相，解读了微信的四⼤价值观。张⼩⻰指出， 越来越多产品通过公众号来做，因为这⾥开发、获取⽤⼾和传播成本更低。拆分出来的服务号并没有提供更好的服务，所以微信内部正在研究新的形态，叫<strong>「微信⼩程序」</strong> 需要注意的是，之前是叫 做 <strong>应⽤号</strong></li>
+<li>2016年9⽉21⽇，微信⼩程序正式开启内测。在微信⽣态下，触⼿可及、⽤完即⾛的微信⼩程序引起⼴泛关注。腾讯云正式上线微信⼩程序解决⽅案，提供⼩程序在云端服务器的技术⽅案。</li>
+<li>2017年1⽉9⽇，微信推出的“⼩程序”正式上线。“⼩程序”是⼀种⽆需安装，即可使⽤的⼿机“应⽤”。不需要像往常⼀样下载App，⽤⼾在微信中“⽤完即⾛”。</li>
+</ul>
+
+        <h2 id="疯狂的微信⼩程序"   >
+          <a href="#疯狂的微信⼩程序" class="heading-link"><i class="fas fa-link"></i></a>疯狂的微信⼩程序</h2>
+      <ol>
+<li>微信⽉活已经达到10.82亿。其中55岁以上的⽤⼾也达到6300万 </li>
+<li>信息传达数达到450亿，较去年增⻓18%;视频通话4.1亿次,增⻓100% </li>
+<li>⼩程序覆盖超过200+⾏业，交易额增⻓超过6倍，服务1000亿+⼈次,创造出了5000亿+的商业价值</li>
+</ol>
+
+        <h2 id="还有其他的⼩程序-不容忽视"   >
+          <a href="#还有其他的⼩程序-不容忽视" class="heading-link"><i class="fas fa-link"></i></a>还有其他的⼩程序 不容忽视</h2>
+      <ol>
+<li><p>⽀付宝⼩程序</p>
+</li>
+<li><p>百度⼩程序 </p>
+</li>
+<li><p> QQ⼩程序 </p>
+</li>
+<li><p>今⽇头条 + 抖⾳⼩程序 </p>
+</li>
+</ol>
+
+        <h2 id="体验"   >
+          <a href="#体验" class="heading-link"><i class="fas fa-link"></i></a>体验</h2>
+      
+        <h3 id="官⽅微信⼩程序体验"   >
+          <a href="#官⽅微信⼩程序体验" class="heading-link"><i class="fas fa-link"></i></a>官⽅微信⼩程序体验</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab5a8f1cd1bbb86be948b7.png" >
+      </p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/wechat-miniprogram/miniprogram-demo" >⼩程序⽰例源码</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="其他优秀的第三⽅⼩程序"   >
+          <a href="#其他优秀的第三⽅⼩程序" class="heading-link"><i class="fas fa-link"></i></a>其他优秀的第三⽅⼩程序</h3>
+      <ul>
+<li>拼多多</li>
+<li>滴滴出⾏ </li>
+<li>欢乐⽃地主 </li>
+<li>智⾏⽕⻋票 </li>
+<li>唯品会</li>
+</ul>
+
+        <h2 id="环境准备"   >
+          <a href="#环境准备" class="heading-link"><i class="fas fa-link"></i></a>环境准备</h2>
+      <p>开发微信⼩程序之前，必须要准备好相应的环境 </p>
+
+        <h3 id="注册账号"   >
+          <a href="#注册账号" class="heading-link"><i class="fas fa-link"></i></a>注册账号</h3>
+      <blockquote>
+<p>建议使用全新的邮箱，没有注册过其他小程序或者公众号的。  </p>
+</blockquote>
+<p>访问<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wxopen/waregister?action=step1" >注册⻚⾯</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，耐⼼完成注册即可。  </p>
+
+        <h3 id="获取APPID"   >
+          <a href="#获取APPID" class="heading-link"><i class="fas fa-link"></i></a>获取APPID</h3>
+      <p>由于后期调⽤微信⼩程序的接⼝等功能，需要索取开发者的⼩程序中的 APPID APPID ，所以在注册成功后，可登录，然后获取APPID。  </p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/" >登录</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，成功后可看到如下界⾯  </p>
+<p>然后复制你的APPID,悄悄的保存起来，不要给别⼈看到😄。  </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab5f8d1cd1bbb86bea3359.png" >
+      </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab5fb71cd1bbb86bea3ce2.png" >
+      </p>
+
+        <h3 id="开发⼯具"   >
+          <a href="#开发⼯具" class="heading-link"><i class="fas fa-link"></i></a>开发⼯具</h3>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" >下载地址</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>  </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab60271cd1bbb86bea5270.png" >
+      </p>
+<p>微信⼩程序⾃带开发者⼯具，集 <strong>开发</strong> <strong>预览</strong> <strong>调试</strong> <strong>发布</strong>于⼀⾝的完整环境。但是由于编码的体验不算好，因此 建议使⽤  vs code + 微信小程序编辑工具来实现编码，vs code 负责敲代码， 微信编辑工具 微信编辑工具负责预览  </p>
+
+        <h2 id="第⼀个微信⼩程序"   >
+          <a href="#第⼀个微信⼩程序" class="heading-link"><i class="fas fa-link"></i></a>第⼀个微信⼩程序</h2>
+      
+        <h3 id="打开微信开发者⼯具"   >
+          <a href="#打开微信开发者⼯具" class="heading-link"><i class="fas fa-link"></i></a>打开微信开发者⼯具</h3>
+      <p>注意第⼀次登录的时候需要扫码登录 </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab62911cd1bbb86beabdc6.png" >
+      </p>
+
+        <h3 id="新建小程序项目"   >
+          <a href="#新建小程序项目" class="heading-link"><i class="fas fa-link"></i></a>新建小程序项目</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab62f71cd1bbb86bead040.png" >
+      </p>
+
+        <h3 id="填写项⽬信息"   >
+          <a href="#填写项⽬信息" class="heading-link"><i class="fas fa-link"></i></a>填写项⽬信息</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab63371cd1bbb86beadacc.png" >
+      </p>
+
+        <h3 id="成功"   >
+          <a href="#成功" class="heading-link"><i class="fas fa-link"></i></a>成功</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab60271cd1bbb86bea5270.png" >
+      </p>
+
+        <h2 id="微信开发者⼯具介绍"   >
+          <a href="#微信开发者⼯具介绍" class="heading-link"><i class="fas fa-link"></i></a>微信开发者⼯具介绍</h2>
+      <p>详细的使⽤，可以查看<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html" >官⽹</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>  </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab84aa1cd1bbb86bf2016c.png" >
+      </p>
+
+        <h2 id="⼩程序结构⽬录"   >
+          <a href="#⼩程序结构⽬录" class="heading-link"><i class="fas fa-link"></i></a>⼩程序结构⽬录</h2>
+      <p>⼩程序框架的⽬标是通过尽可能简单、⾼效的⽅式让开发者可以在微信中开发具有原⽣APP体验的服务。<br>⼩程序框架提供了⾃⼰的视图层描述语⾔ WXML 和 WXSS ，以及 JavaScript ，并在视图层与逻<br>辑层间提供了数据传输和事件系统，让开发者能够专注于数据与逻辑  </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">结构</th>
+<th align="center">传统Web</th>
+<th align="center">微信小程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">结构</td>
+<td align="center">HTML</td>
+<td align="center">WXML</td>
+</tr>
+<tr>
+<td align="center">样式</td>
+<td align="center">CSS</td>
+<td align="center">WXSS</td>
+</tr>
+<tr>
+<td align="center">逻辑</td>
+<td align="center">JavaScript</td>
+<td align="center">JavaScript</td>
+</tr>
+<tr>
+<td align="center">配置</td>
+<td align="center">无</td>
+<td align="center">JSON</td>
+</tr>
+</tbody></table></div>
+<p>通过以上对⽐得出，传统web是三层结构。⽽微信⼩程序是四层结构，多了⼀层配置<code>.json</code>  </p>
+
+        <h3 id="基本的项目目录"   >
+          <a href="#基本的项目目录" class="heading-link"><i class="fas fa-link"></i></a>基本的项目目录</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab88d51cd1bbb86bf30fe6.png" >
+      </p>
+
+        <h2 id="小程序配置文件"   >
+          <a href="#小程序配置文件" class="heading-link"><i class="fas fa-link"></i></a>小程序配置文件</h2>
+      <p>⼀个⼩程序应⽤程序会包括最基本的两种配置⽂件。⼀种是全局的<strong>app.json</strong>和 ⻚⾯⾃⼰的<strong>page.sjon</strong></p>
+<blockquote>
+<p>注意：配置文件中不能出现注释</p>
+</blockquote>
+
+        <h3 id="全局配置app-json"   >
+          <a href="#全局配置app-json" class="heading-link"><i class="fas fa-link"></i></a>全局配置app.json</h3>
+      <p><strong>app.json</strong> 是当前⼩程序的全局配置，包括了⼩程序的所有⻚⾯路径、界⾯表现、⽹络超时时间、底部tab等。普通快速启动项⽬⾥边的  <strong>app.json</strong> 配置</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;pages&quot;:[</span><br><span class="line">&quot;pages&#x2F;index&#x2F;index&quot;,</span><br><span class="line">&quot;pages&#x2F;logs&#x2F;logs&quot;</span><br><span class="line">],</span><br><span class="line">&quot;window&quot;:&#123;</span><br><span class="line">&quot;backgroundTextStyle&quot;:&quot;light&quot;,</span><br><span class="line">&quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,</span><br><span class="line">&quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,</span><br><span class="line">&quot;navigationBarTextStyle&quot;:&quot;black&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>字段的含义  </p>
+<ol>
+<li>pages 字段 —— 用于描述当前小程序所有页面路径，这是为了让微信客服知道当前你的小程序页面定义再哪个目录。</li>
+<li>window 字段 —— 定义小程序所有页面的顶部背景颜色，文字颜色定义等。</li>
+<li>完整的配置信息请参考 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html" >app.json配置</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+</ol>
+
+        <h3 id="Tabbar"   >
+          <a href="#Tabbar" class="heading-link"><i class="fas fa-link"></i></a>Tabbar</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fab8f331cd1bbb86bf4da86.png" >
+      </p>
+
+        <h3 id="页面配置-page-json"   >
+          <a href="#页面配置-page-json" class="heading-link"><i class="fas fa-link"></i></a>页面配置 page.json</h3>
+      <p>这里的<code>page.json</code>其实用来表示页面目录下的<code>page.json</code>这类和⼩程序⻚⾯相关的配置。</p>
+<p>开发者可以独⽴定义每个⻚⾯的⼀些属性，如顶部颜⾊、是否允许下拉刷新等等。</p>
+<p>页面的配置只能设置app.json中部分window配置项的内容，页面中配置项会覆盖app.json的window中相同的配置项。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">navigationBarBackgroundColor</td>
+<td align="center">HexColor</td>
+<td align="center">#000000</td>
+<td align="center">导航栏背景颜⾊，如#000000</td>
+</tr>
+<tr>
+<td align="center">navigationBarTextStyle</td>
+<td align="center">String</td>
+<td align="center">white</td>
+<td align="center">导航栏标题颜⾊，仅⽀持black /white</td>
+</tr>
+<tr>
+<td align="center">navigationBarTitleText</td>
+<td align="center">String</td>
+<td align="center"></td>
+<td align="center">导航栏标题⽂字内容</td>
+</tr>
+<tr>
+<td align="center">backgroundColor</td>
+<td align="center">HexColor</td>
+<td align="center">#FFFFFF</td>
+<td align="center">窗⼝的背景⾊</td>
+</tr>
+<tr>
+<td align="center">backgroundTextStyle</td>
+<td align="center">String</td>
+<td align="center">dark</td>
+<td align="center">下拉loading的样式，仅⽀持 dark / light</td>
+</tr>
+<tr>
+<td align="center">enablePullDownRefresh</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">是否全局开启下拉刷新。详⻅<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onpulldownrefresh" >Page.onPullDownRefresh</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td align="center">onReachBottomDistance</td>
+<td align="center">Number</td>
+<td align="center">50</td>
+<td align="center">⻚⾯上拉触底事件触发时距⻚⾯底部距离，单位为px。详⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onreachbottom" >Page.onReachBottom</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td align="center">disableScroll</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">设置为 true 则⻚⾯整体不能上下滚动；只在⻚⾯配置中有 效，⽆法在app.json中设置该项</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="SiteMap配置-了解即可"   >
+          <a href="#SiteMap配置-了解即可" class="heading-link"><i class="fas fa-link"></i></a>SiteMap配置-了解即可</h3>
+      <p>⼩程序根⽬录下的<strong>sitemap.json</strong>⽂件⽤于配置⼩程序及其⻚⾯是否允许被微信索引。</p>
+
+        <h3 id="模板语法"   >
+          <a href="#模板语法" class="heading-link"><i class="fas fa-link"></i></a>模板语法</h3>
+      <p>WXML（WeiXin Markup Language）是框架设计的⼀套标签语⾔，结合<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/index.html" >基础组件</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>、<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html" >事件系统</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，可以构<br>建出⻚⾯的结构。  </p>
+
+        <h3 id="数据绑定"   >
+          <a href="#数据绑定" class="heading-link"><i class="fas fa-link"></i></a>数据绑定</h3>
+      
+        <h4 id="普通写法"   >
+          <a href="#普通写法" class="heading-link"><i class="fas fa-link"></i></a>普通写法</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123; message &#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello MINA!&#x27;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="组件属性"   >
+          <a href="#组件属性" class="heading-link"><i class="fas fa-link"></i></a>组件属性</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">&quot;item-&#123;&#123;id&#125;&#125;&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    id: 0</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="bool类型"   >
+          <a href="#bool类型" class="heading-link"><i class="fas fa-link"></i></a>bool类型</h4>
+      <p>不要直接写checked= false ，其计算结果是⼀个字符串  </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">checkbox</span> <span class="attr">checked</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="运算"   >
+          <a href="#运算" class="heading-link"><i class="fas fa-link"></i></a>运算</h3>
+      
+        <h4 id="三元运算"   >
+          <a href="#三元运算" class="heading-link"><i class="fas fa-link"></i></a>三元运算</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">hidden</span>=<span class="string">&quot;&#123;&#123;flag ? true : false&#125;&#125;&quot;</span>&gt;</span> Hidden <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="算数运算"   >
+          <a href="#算数运算" class="heading-link"><i class="fas fa-link"></i></a>算数运算</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;a + b&#125;&#125; + &#123;&#123;c&#125;&#125; + d <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 3</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="逻辑判断"   >
+          <a href="#逻辑判断" class="heading-link"><i class="fas fa-link"></i></a>逻辑判断</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;length &gt; 5&#125;&#125;&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="字符串运算"   >
+          <a href="#字符串运算" class="heading-link"><i class="fas fa-link"></i></a>字符串运算</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;&quot;hello&quot; + name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    name: &#x27;MINA&#x27;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="注意"   >
+          <a href="#注意" class="heading-link"><i class="fas fa-link"></i></a>注意</h4>
+      <p>花括号和引号之间如果有空格，将最终被解析成为字符串  </p>
+
+        <h2 id="列表渲染"   >
+          <a href="#列表渲染" class="heading-link"><i class="fas fa-link"></i></a>列表渲染</h2>
+      
+        <h3 id="wx-for"   >
+          <a href="#wx-for" class="heading-link"><i class="fas fa-link"></i></a>wx:for</h3>
+      <p>项的变量名默认为 <code>item</code> <code>wx:for-item</code> 可以指定数组当前元素的变量名 </p>
+<p>下标变量名默认为 <code>index</code> <code>wx-for-index</code> 可以指定数组当前下标的变量名</p>
+<p><code>wx:key</code> ⽤来提⾼数组渲染的性能</p>
+<p><code>wx:key</code> 绑定的值 有如下选择 </p>
+<ol>
+<li><p><code>string</code> 类型，表⽰ 循环项中的唯⼀属性 如 </p>
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list:[&#123;id:0,name:&quot;炒饭&quot;&#125;,&#123;id:1,name:&quot;炒面&quot;&#125;]</span><br><span class="line">wx:key=&quot;id&quot;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>保留字<code>*this</code> ，它的意思是<code>item</code> 本⾝ ，*this 代表的必须是 唯⼀的字符串和数组</p>
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list:[1,2,3,4,5]</span><br><span class="line">wx:key=&quot;*this&quot;</span><br></pre></td></tr></table></div></figure>
+
+</li>
+</ol>
+<p><strong>代码：</strong> </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;id&quot;</span>&gt;</span></span><br><span class="line"> &#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [&#123;</span><br><span class="line">      id:0,</span><br><span class="line">      message: &#x27;foo&#x27;,</span><br><span class="line">   &#125;, &#123;</span><br><span class="line">      id:1,</span><br><span class="line">      message: &#x27;bar&#x27;</span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="block"   >
+          <a href="#block" class="heading-link"><i class="fas fa-link"></i></a>block</h3>
+      <p>渲染⼀个包含多节点的结构块 block最终不会变成真正的dom元素 </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;[1, 2, 3]&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;*this&quot;</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;index&#125;&#125;: <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;item&#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="条件渲染"   >
+          <a href="#条件渲染" class="heading-link"><i class="fas fa-link"></i></a>条件渲染</h2>
+      
+        <h3 id="wx-if"   >
+          <a href="#wx-if" class="heading-link"><i class="fas fa-link"></i></a>wx:if</h3>
+      <p>在框架中，使⽤<code>wx:if=&quot;&#123;&#123;condition&#125;&#125;&quot;</code> 来判断是否需要渲染该代码块： </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:elif</span>=<span class="string">&quot;&#123;&#123;true&#125;&#125;&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:else</span>&gt;</span>3<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="hidden"   >
+          <a href="#hidden" class="heading-link"><i class="fas fa-link"></i></a>hidden</h3>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">hidden</span>=<span class="string">&quot;&#123;&#123;condition&#125;&#125;&quot;</span>&gt;</span> True <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>类似 <code>wx:if</code></p>
+<p>频繁切换 ⽤<code>hidden</code></p>
+<p>不常使⽤ ⽤<code>wx:if</code></p>
+
+        <h2 id="小程序事件的绑定"   >
+          <a href="#小程序事件的绑定" class="heading-link"><i class="fas fa-link"></i></a>小程序事件的绑定</h2>
+      <p>⼩程序中绑定事件，通过bind关键字来实现。如<code>bindtap</code> <code>bindinput</code> <code>bindchange</code> 等 </p>
+<p>不同的组件⽀持不同的事件，具体看组件的说明即可。 </p>
+
+        <h3 id="wxml"   >
+          <a href="#wxml" class="heading-link"><i class="fas fa-link"></i></a>wxml</h3>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">bindinput</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="page"   >
+          <a href="#page" class="heading-link"><i class="fas fa-link"></i></a>page</h3>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  <span class="comment">// 绑定的事件</span></span><br><span class="line">  handleInput: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;值被改变了&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="特别注意"   >
+          <a href="#特别注意" class="heading-link"><i class="fas fa-link"></i></a>特别注意</h3>
+      <ol>
+<li><p>绑定事件时不能带参数 不能带括号 以下为错误写法</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">bindinput</span>=<span class="string">&quot;handleInput(100)&quot;</span> /&gt;</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>事件传值 通过标签⾃定义属性的⽅式 和<code>value</code> </p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">bindinput</span>=<span class="string">&quot;handleInput&quot;</span> <span class="attr">data-item</span>=<span class="string">&quot;100&quot;</span> /&gt;</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>事件触发时获取数据 </p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">handleInput: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">   <span class="comment">// &#123;item:100&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(e.currentTarget.dataset)</span><br><span class="line">   <span class="comment">// 输入框的值</span></span><br><span class="line">  <span class="built_in">console</span>.log(e.detail.value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+</li>
+</ol>
+
+        <h2 id="样式WXSS"   >
+          <a href="#样式WXSS" class="heading-link"><i class="fas fa-link"></i></a>样式WXSS</h2>
+      <p>WXSS( <code>WeiXin Style Sheets</code> )是⼀套样式语⾔，⽤于描述 WXML的组件样式。 </p>
+<p>与 CSS 相⽐，WXSS 扩展的特性有： </p>
+<ul>
+<li>响应式⻓度单位<code>rpx</code> </li>
+<li>样式导⼊ </li>
+</ul>
+
+        <h3 id="尺寸单位"   >
+          <a href="#尺寸单位" class="heading-link"><i class="fas fa-link"></i></a>尺寸单位</h3>
+      <p><code>rpx</code> （responsive pixel）: 可以根据屏幕宽度进⾏⾃适应。规定屏幕宽为 750rpx。如在 <code>iPhone6</code> 上，屏幕宽度为 375px </p>
+<p>，共有750个物理像素，则 <code>750rpx = 375px = 750物理像素</code> ，<code>1rpx = 0.5px = 1物理像素</code> 。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>rpx换算px (屏幕宽度/750)</th>
+<th>px换算rpx (750/屏幕宽度)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iPhone5</td>
+<td>1rpx = 0.42px</td>
+<td>1px = 2.34rpx</td>
+</tr>
+<tr>
+<td>iPhone6</td>
+<td>1rpx = 0.5px</td>
+<td>1px = 2rpx</td>
+</tr>
+<tr>
+<td>iPhone6 Plus</td>
+<td>1rpx = 0.552px</td>
+<td>1px = 1.81rpx</td>
+</tr>
+</tbody></table></div>
+<p>建议： 开发微信⼩程序时设计师可以⽤ iPhone6 作为视觉稿的标准。 </p>
+<p>使⽤步骤： </p>
+<ol>
+<li>确定设计稿宽度 pageWidth </li>
+<li> 计算⽐例 <code>750rpx = pageWidth px</code> ，因此 <code>1px=750rpx/pageWidth</code> 。</li>
+<li>在less⽂件中，只要把设计稿中的 <code>px</code> =&gt; <code>750/pageWidth rpx</code> 即可。 </li>
+</ol>
+
+        <h3 id="样式导⼊"   >
+          <a href="#样式导⼊" class="heading-link"><i class="fas fa-link"></i></a>样式导⼊</h3>
+      <p>wxss中直接就⽀持，样式导⼊功能。 </p>
+<p>也可以和 less中的导⼊混⽤。 </p>
+<p>使⽤ <code>@import</code> 语句可以导⼊外联样式表，只⽀持<strong>相对路径</strong>。 </p>
+<p><strong>⽰例代码：</strong> </p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** common.wxss **/</span></span><br><span class="line"><span class="selector-class">.small-p</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">5px</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** app.wxss **/</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;common.wxss&quot;</span>;</span><br><span class="line"><span class="selector-class">.middle-p</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">15px</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="选择器"   >
+          <a href="#选择器" class="heading-link"><i class="fas fa-link"></i></a>选择器</h3>
+      <p>特别需要注意的是 ⼩程序 不⽀持通配符 <code>*</code> 因此以下代码⽆效！ </p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>:border-box; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>⽬前⽀持的选择器有：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>样例</th>
+<th>样例描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.class</td>
+<td>.intro</td>
+<td>选择所有拥有 class=”intro” 的组件</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>#firstname</td>
+<td>选择拥有 id=“firstname“ 的组件</td>
+</tr>
+<tr>
+<td>element</td>
+<td>view</td>
+<td>选择所有 view 组件</td>
+</tr>
+<tr>
+<td>element, element</td>
+<td>view, checkbox</td>
+<td>选择所有⽂档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td>nth-child(n)</td>
+<td>view:nth-child(n)</td>
+<td>选择某个索引的标签</td>
+</tr>
+<tr>
+<td>::after</td>
+<td>view::after</td>
+<td>在 view 组件后边插⼊内容</td>
+</tr>
+<tr>
+<td>::before</td>
+<td>view::before</td>
+<td>在 view 组件前边插⼊内容</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="小程序中使用less"   >
+          <a href="#小程序中使用less" class="heading-link"><i class="fas fa-link"></i></a>小程序中使用less</h3>
+      <p>原⽣⼩程序不⽀持 <code>less</code> ，其他基于⼩程序的框架⼤体都⽀持，如 <code>wepy</code> <code>mpvue</code> <code>taro</code> 等。 </p>
+<p>但是仅仅因为⼀个less功能，⽽去引⼊⼀个框架，肯定是不可取的。因此可以⽤以下⽅式来实现 </p>
+<ol>
+<li><p>编辑器是 <code>vscode</code> </p>
+</li>
+<li><p>安装插件 <code>easy less</code> </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5facf23b1cd1bbb86b4d91e4.png" >
+      </p>
+</li>
+<li><p>在vs code的设置中加⼊如下，配置 </p>
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;less.compile&quot;: &#123;</span><br><span class="line">     &quot;outExt&quot;:       &quot;.wxss&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p> 在要编写样式的地⽅，新建 <code>less</code> ⽂件，如 <code>index.less</code> ，然后正常编辑即可。</p>
+</li>
+</ol>
+
+        <h2 id="常⻅组件"   >
+          <a href="#常⻅组件" class="heading-link"><i class="fas fa-link"></i></a>常⻅组件</h2>
+      <p>重点讲解⼩程序中常⽤的布局组件</p>
+
+        <h3 id="view"   >
+          <a href="#view" class="heading-link"><i class="fas fa-link"></i></a>view</h3>
+      <p>代替 原来的 <code>div</code> 标签</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">hover-class</span>=<span class="string">&quot;h-class&quot;</span>&gt;</span></span><br><span class="line">点击我试试</span><br><span class="line"> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="text"   >
+          <a href="#text" class="heading-link"><i class="fas fa-link"></i></a>text</h3>
+      <ol>
+<li>⽂本标签 </li>
+<li>只能嵌套text</li>
+<li>⻓按⽂字可以复制（只有该标签有这个功能） </li>
+<li>可以对空格 回⻋ 进⾏编码 </li>
+</ol>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>selectable</td>
+<td>Boolean</td>
+<td>false</td>
+<td>⽂本是否可选</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否解码</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="代码"   >
+          <a href="#代码" class="heading-link"><i class="fas fa-link"></i></a>代码</h4>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">selectable</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span> <span class="attr">decode</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">  普<span class="symbol">&amp;nbsp;</span>通</span><br><span class="line"> <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="image"   >
+          <a href="#image" class="heading-link"><i class="fas fa-link"></i></a>image</h3>
+      <ol>
+<li> 图⽚标签，image组件默认宽度320px、⾼度240px </li>
+<li>⽀持懒加载</li>
+</ol>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>String</td>
+<td></td>
+<td>图⽚资源地址</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>String</td>
+<td>‘scaleToFill’</td>
+<td>图⽚裁剪、缩放的模式</td>
+</tr>
+<tr>
+<td>lazy-load</td>
+<td>Boolean</td>
+<td>false</td>
+<td>图⽚懒加载</td>
+</tr>
+</tbody></table></div>
+<p><strong>mode 有效值：</strong> </p>
+<p>mode 有 13 种模式，其中 4 种是缩放模式，9种是裁剪模式。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>缩放</td>
+<td>scaleToFill</td>
+<td>不保持纵横⽐缩放图⽚，使图⽚的宽⾼完全拉伸⾄填满image 元素</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>aspectFit</td>
+<td>保持纵横⽐缩放图⽚，使图⽚的⻓边能完全显⽰出来。</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>aspectFill</td>
+<td>保持纵横⽐缩放图⽚，只保证图⽚的短边能完全显⽰出来。</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>widthFix</td>
+<td>宽度不变，⾼度⾃动变化，保持原图宽⾼⽐不变</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top</td>
+<td>不缩放图⽚，只显⽰图⽚的顶部区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom</td>
+<td>不缩放图⽚，只显⽰图⽚的底部区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>center</td>
+<td>不缩放图⽚，只显⽰图⽚的中间区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>left</td>
+<td>不缩放图⽚，只显⽰图⽚的左边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>right</td>
+<td>不缩放图⽚，只显⽰图⽚的右边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top left</td>
+<td>不缩放图⽚，只显⽰图⽚的左上边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top right</td>
+<td>不缩放图⽚，只显⽰图⽚的右上边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom left</td>
+<td>不缩放图⽚，只显⽰图⽚的左下边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom right</td>
+<td>不缩放图⽚，只显⽰图⽚的右下边区域</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="swiper"   >
+          <a href="#swiper" class="heading-link"><i class="fas fa-link"></i></a>swiper</h3>
+      <blockquote>
+<p>微信内置轮播图组件</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae45631cd1bbb86b9630eb.png" >
+      </p>
+<p>默认宽度 100% ⾼度 150px </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>indicator-dots</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否显⽰⾯板指⽰点</td>
+</tr>
+<tr>
+<td>indicator-color</td>
+<td>Color</td>
+<td>rgba(0, 0, 0, .3)</td>
+<td>指⽰点颜⾊</td>
+</tr>
+<tr>
+<td>indicator-active-color</td>
+<td>Color</td>
+<td>#000000</td>
+<td>当前选中的指⽰点颜⾊</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否⾃动切换</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Number</td>
+<td>5000</td>
+<td>⾃动切换时间间隔</td>
+</tr>
+<tr>
+<td>circular</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否循环轮播</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="swiper-1"   >
+          <a href="#swiper-1" class="heading-link"><i class="fas fa-link"></i></a>swiper</h3>
+      <p>滑块视图容器。</p>
+
+        <h3 id="swiper-item"   >
+          <a href="#swiper-item" class="heading-link"><i class="fas fa-link"></i></a>swiper-item</h3>
+      <blockquote>
+<p>滑块</p>
+</blockquote>
+<p><strong>默认宽度和⾼度都是100%</strong></p>
+
+        <h3 id="navigator"   >
+          <a href="#navigator" class="heading-link"><i class="fas fa-link"></i></a>navigator</h3>
+      <blockquote>
+<p>导航组件 类似超链接标签</p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>target</td>
+<td>String</td>
+<td>self</td>
+<td>在哪个⽬标上发⽣跳转，默认当前⼩程序，可选值 self/miniProgram</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td></td>
+<td>当前⼩程序内的跳转链接</td>
+</tr>
+<tr>
+<td>open-type</td>
+<td>String</td>
+<td>navigate</td>
+<td>跳转⽅式</td>
+</tr>
+</tbody></table></div>
+<p><strong>open-type 有效值：</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>navigate</td>
+<td>保留当前⻚⾯，跳转到应⽤内的某个⻚⾯，但是不能跳到tabbar ⻚⾯</td>
+</tr>
+<tr>
+<td>redirect</td>
+<td>关闭当前⻚⾯，跳转到应⽤内的某个⻚⾯，但是不允许跳转到tabbar ⻚⾯。</td>
+</tr>
+<tr>
+<td>switchTab</td>
+<td>跳转到 tabBar ⻚⾯，并关闭其他所有⾮ tabBar ⻚⾯</td>
+</tr>
+<tr>
+<td>reLaunch</td>
+<td>关闭所有⻚⾯，打开到应⽤内的某个⻚⾯</td>
+</tr>
+<tr>
+<td>navigateBack</td>
+<td>关闭当前⻚⾯，返回上⼀⻚⾯或多级⻚⾯。可通过 getCurrentPages() 获取当前的⻚⾯栈，决定需要返回⼏层</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>退出⼩程序，target=miniProgram时⽣效</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="rich-text"   >
+          <a href="#rich-text" class="heading-link"><i class="fas fa-link"></i></a>rich-text</h3>
+      <blockquote>
+<p>富文本标签</p>
+</blockquote>
+<p>可以将字符串解析成 对应标签，类似 vue中 <code>v-html</code> 功能</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae48b21cd1bbb86b96feb5.png" >
+      </p>
+<p><strong>代码</strong></p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 1   index.wxml 加载 节点数组 <span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">nodes</span>=<span class="string">&quot;&#123;&#123;nodes&#125;&#125;&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;tap&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">// 2 加载 字符串 <span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">nodes</span>=<span class="string">&#x27;&lt;img</span></span></span><br><span class="line"><span class="tag"><span class="string">src=&quot;https://developers.weixin.qq.com/miniprogram/assets/images/head_global_z_@all.p</span></span></span><br><span class="line"><span class="tag"><span class="string">ng&quot; alt=&quot;&quot;&gt;&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">// index.js</span><br><span class="line">    </span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    nodes: [&#123;</span><br><span class="line">      name: &#x27;div&#x27;,</span><br><span class="line">      attrs: &#123;</span><br><span class="line">        class: &#x27;div_class&#x27;,</span><br><span class="line">        style: &#x27;line-height: 60px; color: red;&#x27;</span><br><span class="line">     &#125;,</span><br><span class="line">      children: [&#123;</span><br><span class="line">        type: &#x27;text&#x27;,</span><br><span class="line">        text: &#x27;Hello<span class="symbol">&amp;nbsp;</span>World!&#x27;</span><br><span class="line">     &#125;]</span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;,</span><br><span class="line">  tap() &#123;</span><br><span class="line">    console.log(&#x27;tap&#x27;)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="nodes属性"   >
+          <a href="#nodes属性" class="heading-link"><i class="fas fa-link"></i></a>nodes属性</h3>
+      <p><code>nodes</code> 属性支持 <code>字符串</code> 和 <code>标签节点数组</code> </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>必填</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>标签名</td>
+<td>string</td>
+<td>是</td>
+<td>⽀持部分受信任的 HTML 节点</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>属性</td>
+<td>object</td>
+<td>否</td>
+<td>⽀持部分受信任的属性，遵循 Pascal 命名法</td>
+</tr>
+<tr>
+<td>children</td>
+<td>⼦节点列表</td>
+<td>array</td>
+<td>否</td>
+<td>结构和 nodes ⼀致</td>
+</tr>
+</tbody></table></div>
+<p><strong>⽂本节点：type = text</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>必填</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text</td>
+<td>⽂本</td>
+<td>string</td>
+<td>是</td>
+<td>⽀持entities</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><code>nodes</code>不推荐使用 <code>String</code> 类型，性能会有所下降。</li>
+<li><code>rich-text</code> 组件内屏蔽所有节点的事件。</li>
+<li><code>attrs</code> 属性不⽀持 id ，⽀持 class 。</li>
+<li><code>name</code> 属性⼤⼩写不敏感。 </li>
+<li>如果使⽤了不受信任的 <code>HTML</code> 节点，该节点及其所有⼦节点将会被移除。</li>
+<li><code>img</code> 标签仅⽀持⽹络图⽚。 </li>
+</ul>
+
+        <h3 id="button"   >
+          <a href="#button" class="heading-link"><i class="fas fa-link"></i></a>button</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae4a901cd1bbb86b977d1a.png" >
+      </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">&quot;default&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">size</span>=<span class="string">&quot;&#123;&#123;defaultSize&#125;&#125;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">loading</span>=<span class="string">&quot;&#123;&#123;loading&#125;&#125;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">plain</span>=<span class="string">&quot;&#123;&#123;plain&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line"> default</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>size</td>
+<td>string</td>
+<td>default</td>
+<td>否</td>
+<td>按钮的⼤⼩</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>default</td>
+<td>否</td>
+<td>按钮的样式类型</td>
+</tr>
+<tr>
+<td>plain</td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>按钮的样式类型</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否禁⽤</td>
+</tr>
+<tr>
+<td>loading</td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>名称前是否带 loading 图标</td>
+</tr>
+<tr>
+<td>form-type</td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>⽤于<code>组件，点击分别会触发</code> 组件的submit/reset 事件</td>
+</tr>
+<tr>
+<td>open-type</td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>微信开放能⼒</td>
+</tr>
+</tbody></table></div>
+<p><strong>size 的合法值</strong> </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default</td>
+<td>默认⼤⼩</td>
+</tr>
+<tr>
+<td>mini</td>
+<td>⼩尺⼨</td>
+</tr>
+</tbody></table></div>
+<p><strong>type 的合法值</strong> </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>primary</td>
+<td>绿⾊</td>
+</tr>
+<tr>
+<td>default</td>
+<td>⽩⾊</td>
+</tr>
+<tr>
+<td>warn</td>
+<td>红⾊</td>
+</tr>
+</tbody></table></div>
+<p><strong>form-type 的合法值</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>submit</td>
+<td>提交表单</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置表单</td>
+</tr>
+</tbody></table></div>
+<p><strong>open-type 的合法值</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>contact</td>
+<td>打开客服会话，如果⽤⼾在会话中点击消息卡⽚后返回⼩程序，可以从bindcontact 回调中获得具体信息，<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/customer-message.html" >具体说明</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>share</td>
+<td>触发⽤⼾转发，使⽤前建议先阅读<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95" >使⽤指引</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>getPhoneNumber</td>
+<td>获取⽤⼾⼿机号，可以从bindgetphonenumber回调中获取到⽤⼾信息， <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html" >具体说明</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>getUserInfo</td>
+<td>获取⽤⼾信息，可以从bindgetuserinfo回调中获取到⽤⼾信息</td>
+</tr>
+<tr>
+<td>launchApp</td>
+<td>打开APP，可以通过app-parameter属性设定向APP传的参数<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html" >具体说明</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>openSetting</td>
+<td>打开授权设置⻚</td>
+</tr>
+<tr>
+<td>feedback</td>
+<td>打开“意⻅反馈”⻚⾯，⽤⼾可提交反馈内容并上传<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.getLogManager.html" >⽇志</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，开发者可以登录<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/" >⼩程序管理后台</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>后进⼊左侧菜单“客服反馈”⻚⾯获取到反馈内容</td>
+</tr>
+</tbody></table></div>
+<p><strong>open-type 的 contact的实现流程</strong></p>
+<ol>
+<li><p> 将⼩程序 的 <code>appid</code>  由测试号改为 ⾃⼰的 <code>appid</code></p>
+</li>
+<li><p>登录<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/" >微信⼩程序官⽹</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，添加 <code>客服 - 微信</code> </p>
+</li>
+<li><p>为了⽅便演⽰，⽼师⾃⼰准备了两个账号</p>
+<p>a.普通⽤⼾ A </p>
+<p>b.客服-微信 B </p>
+</li>
+<li><p>就是⼲！ </p>
+</li>
+</ol>
+
+        <h3 id="icon"   >
+          <a href="#icon" class="heading-link"><i class="fas fa-link"></i></a>icon</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>icon的类型，有效值：success, success_no_circle,info, warn, waiting, cancel, download, search,clear</td>
+</tr>
+<tr>
+<td>size</td>
+<td>number/string</td>
+<td>23</td>
+<td>否</td>
+<td>icon的⼤⼩</td>
+</tr>
+<tr>
+<td>color</td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>icon的颜⾊，同css的color</td>
+</tr>
+</tbody></table></div>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae4ff11cd1bbb86b99317a.png" >
+      </p>
+<p><strong>代码:</strong> </p>
+<p><strong>js</strong></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    iconSize: [<span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>, <span class="number">70</span>],</span><br><span class="line">    iconType: [</span><br><span class="line">      <span class="string">&#x27;success&#x27;</span>, <span class="string">&#x27;success_no_circle&#x27;</span>, <span class="string">&#x27;info&#x27;</span>, <span class="string">&#x27;warn&#x27;</span>, <span class="string">&#x27;waiting&#x27;</span>, <span class="string">&#x27;cancel&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;download&#x27;</span>, <span class="string">&#x27;search&#x27;</span>, <span class="string">&#x27;clear&#x27;</span></span><br><span class="line">   ],</span><br><span class="line">    iconColor: [</span><br><span class="line">      <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;rgb(0,255,255)&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;purple&#x27;</span></span><br><span class="line">   ],</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>wxml</strong> </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;group&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;iconSize&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">icon</span> <span class="attr">type</span>=<span class="string">&quot;success&quot;</span> <span class="attr">size</span>=<span class="string">&quot;&#123;&#123;item&#125;&#125;&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span> <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;group&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;iconType&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">icon</span> <span class="attr">type</span>=<span class="string">&quot;&#123;&#123;item&#125;&#125;&quot;</span> <span class="attr">size</span>=<span class="string">&quot;40&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span> <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;group&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;iconColor&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">icon</span> <span class="attr">type</span>=<span class="string">&quot;success&quot;</span> <span class="attr">size</span>=<span class="string">&quot;40&quot;</span> <span class="attr">color</span>=<span class="string">&quot;&#123;&#123;item&#125;&#125;&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="radio"   >
+          <a href="#radio" class="heading-link"><i class="fas fa-link"></i></a>radio</h3>
+      <blockquote>
+<p>可以通过 color属性来修改颜色</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae50ad1cd1bbb86b995dc1.png" >
+      </p>
+<p>需要搭配 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/radio-group.html" >radio-group</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> ⼀起使⽤ </p>
+
+        <h3 id="checkbox"   >
+          <a href="#checkbox" class="heading-link"><i class="fas fa-link"></i></a>checkbox</h3>
+      <blockquote>
+<p>可以通过 color属性来修改颜色</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae50f61cd1bbb86b996ef6.png" >
+      </p>
+<p>需要搭配 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html" >checkbox-group</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> ⼀起使⽤ </p>
+
+        <h2 id="⾃定义组件"   >
+          <a href="#⾃定义组件" class="heading-link"><i class="fas fa-link"></i></a>⾃定义组件</h2>
+      <blockquote>
+<p>类似vue或者react中的自定义组件</p>
+</blockquote>
+<p>⼩程序允许我们使⽤⾃定义组件的⽅式来构建⻚⾯。 </p>
+
+        <h3 id="创建⾃定义组件"   >
+          <a href="#创建⾃定义组件" class="heading-link"><i class="fas fa-link"></i></a>创建⾃定义组件</h3>
+      <blockquote>
+<p>类似于页面，一个自定义组件由 <code>json</code> <code>wxml</code> <code>wxss</code> <code>js</code> 4个文件组成</p>
+</blockquote>
+<p>可以在微信开发者⼯具中快速创建组件的⽂件结构 </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae519c1cd1bbb86b999e2c.png" >
+      </p>
+<p>在⽂件夹内 <code>components/myHeader </code> ，创建组件 名为 <code>myHeader</code> </p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5fae51e61cd1bbb86b99b7ba.png" >
+      </p>
+
+        <h4 id="声明组件"   >
+          <a href="#声明组件" class="heading-link"><i class="fas fa-link"></i></a>声明组件</h4>
+      <p>⾸先需要在组件的 <code>json</code> ⽂件中进⾏⾃定义组件声明 <code>myHeader.json</code></p>
+<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;component&quot;</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="编辑组件"   >
+          <a href="#编辑组件" class="heading-link"><i class="fas fa-link"></i></a>编辑组件</h4>
+      <p>同时，还要在组件的 <code>wxml</code>  ⽂件中编写组件模板，在 <code>wxss</code> ⽂件中加⼊组件样式 <code>slot</code> 表⽰插槽，类似vue中的slot <code>myHeader.wxml</code> </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是自定义组件的内部WXML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line"> &#123;&#123;innerText&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>在组件的 <code>wxss</code> ⽂件中编写样式</p>
+<blockquote>
+<p>注意：在组件wxss中不应使用ID选择器、属性选择器和标签名选择器。</p>
+</blockquote>
+<p><code>myHeader.wxss</code></p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这里的样式只应用于这个自定义组件 */</span></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="注册组件"   >
+          <a href="#注册组件" class="heading-link"><i class="fas fa-link"></i></a>注册组件</h4>
+      <p>在组件的 <code>js</code> ⽂件中，需要使⽤ <code>Component()</code> 来注册组件，并提供组件的属性定义、内部数据和 ⾃定义⽅法</p>
+<p><code>myHeader.js</code></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">  properties: &#123;</span><br><span class="line">    <span class="comment">// 这里定义了innerText属性，属性值可以在组件使用时指定</span></span><br><span class="line">    innerText: &#123;</span><br><span class="line">      <span class="comment">// 期望要的数据是 string类型</span></span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      value: <span class="string">&#x27;default value&#x27;</span>,</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">// 这里是一些组件内部数据</span></span><br><span class="line">    someData: &#123;&#125;</span><br><span class="line"> &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 这里是一个自定义方法</span></span><br><span class="line">    customMethod: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="声明引⼊⾃定义组件"   >
+          <a href="#声明引⼊⾃定义组件" class="heading-link"><i class="fas fa-link"></i></a>声明引⼊⾃定义组件</h3>
+      <p>⾸先要在⻚⾯的 <code>json</code> ⽂件中进⾏引⽤声明。还要提供对应的组件名和组件路径</p>
+<p><code>index.wxml</code> </p>
+<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="comment">// 引用声明</span></span><br><span class="line">  <span class="attr">&quot;usingComponents&quot;</span>: &#123;</span><br><span class="line"> <span class="comment">// 要使用的组件的名称     // 组件的路径</span></span><br><span class="line">    <span class="attr">&quot;my-header&quot;</span>:<span class="string">&quot;/components/myHeader/myHeader&quot;</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="⻚⾯中使⽤⾃定义组件"   >
+          <a href="#⻚⾯中使⽤⾃定义组件" class="heading-link"><i class="fas fa-link"></i></a>⻚⾯中使⽤⾃定义组件</h3>
+      <figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 以下是对一个自定义组件的引用 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">my-header</span> <span class="attr">inner-text</span>=<span class="string">&quot;Some text&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>用来替代slot的<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">my-header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="其他属性"   >
+          <a href="#其他属性" class="heading-link"><i class="fas fa-link"></i></a>其他属性</h3>
+      
+        <h3 id="定义段与⽰例⽅法"   >
+          <a href="#定义段与⽰例⽅法" class="heading-link"><i class="fas fa-link"></i></a>定义段与⽰例⽅法</h3>
+      <p><code>Component</code> 构造器可⽤于定义组件，调⽤ <code>Component</code> 构造器时可以指定组件的属性、数据、⽅法等。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>定义段</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>properties</td>
+<td>Object Map</td>
+<td>否</td>
+<td>组件的对外属性，是属性名到属性设置的映射表，参⻅下⽂</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>否</td>
+<td>组件的内部数据，和 <code>properties</code> ⼀同⽤于组件的模板渲染</td>
+</tr>
+<tr>
+<td>observers</td>
+<td>Object</td>
+<td>否</td>
+<td>组件数据字段监听器，⽤于监听 properties 和 data 的变化，参⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html" >数据监听器</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>methods</td>
+<td>Object</td>
+<td>否</td>
+<td>组件的⽅法，包括事件响应函数和任意的⾃定义⽅法，关于事件响应函数的使⽤，参⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html" >组件事件</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>created</td>
+<td>Function</td>
+<td>否</td>
+<td>组件⽣命周期函数，在组件实例刚刚被创建时执⾏，注意此时不能调⽤ <code>setData</code> ，参⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html" >组件⽣命周期</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>attached</td>
+<td>Function</td>
+<td>否</td>
+<td>组件⽣命周期函数，在组件实例被移动到节点树另⼀个位置时执⾏，参⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html" >组件⽣命周期</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+<tr>
+<td>ready</td>
+<td>Function</td>
+<td>否</td>
+<td>组件⽣命周期函数，在组件布局完成后执⾏，参⻅ 组件⽣命周期</td>
+</tr>
+<tr>
+<td>moved</td>
+<td>Function</td>
+<td>否</td>
+<td>组件⽣命周期函数，在组件实例被移动到节点树另⼀个位置时执⾏，参⻅ 组件⽣命周期</td>
+</tr>
+<tr>
+<td>detached</td>
+<td>Function</td>
+<td>否</td>
+<td>组件⽣命周期函数，在组件实例被从⻚⾯节点树移除时执⾏，参⻅ <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html" >组件⽣命周期</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="组件-⾃定义组件传参"   >
+          <a href="#组件-⾃定义组件传参" class="heading-link"><i class="fas fa-link"></i></a>组件-⾃定义组件传参</h3>
+      <ol>
+<li>⽗组件通过<strong>属性</strong>的⽅式给⼦组件传递参数 </li>
+<li>⼦组件通过<strong>事件</strong>的⽅式向⽗组件传递参数 </li>
+</ol>
+
+        <h4 id="过程"   >
+          <a href="#过程" class="heading-link"><i class="fas fa-link"></i></a>过程</h4>
+      <ol>
+<li><p><strong>⽗组件</strong> 把数据 <code>&#123;&#123;tabs&#125;&#125;</code> 传递到 ⼦组件的 <code>tabItems</code> 属性中 </p>
+</li>
+<li><p><strong>⽗组件</strong> 监听 <code>onMyTab</code> 事件</p>
+</li>
+<li><p><strong>⼦组件</strong> 触发 <code>bindmytap</code> 中的 <code>mytap</code> 事件</p>
+<p>⾃定义组件触发事件时，需要使⽤ <code>triggerEvent </code>  ⽅法，指定 <code>事件名</code> 、<code>detail</code> 对象</p>
+</li>
+<li><p>⽗ -&gt; ⼦ 动态传值 <code>this.selectComponent(&quot;#tabs&quot;);</code> </p>
+</li>
+</ol>
+<p><strong>⽗组件代码</strong> </p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// page.wxml</span><br><span class="line"><span class="tag">&lt;<span class="name">tabs</span> <span class="attr">tabItems</span>=<span class="string">&quot;&#123;&#123;tabs&#125;&#125;&quot;</span> <span class="attr">bindmytap</span>=<span class="string">&quot;onMyTab&quot;</span> &gt;</span></span><br><span class="line"> 内容-这里可以放插槽</span><br><span class="line"><span class="tag">&lt;/<span class="name">tabs</span>&gt;</span></span><br><span class="line">// page.js</span><br><span class="line">  data: &#123;</span><br><span class="line">    tabs:[</span><br><span class="line">     &#123;name:&quot;体验问题&quot;&#125;,</span><br><span class="line">     &#123;name:&quot;商品、商家投诉&quot;&#125;</span><br><span class="line">   ]</span><br><span class="line"> &#125;,</span><br><span class="line">  onMyTab(e)&#123;</span><br><span class="line">    console.log(e.detail);</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>⼦组件代码</strong> </p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">// com.wxml</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;tabs&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;tab_title&quot;</span>  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span>  <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;tabItems&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;&#123;&#123;item&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">bindtap</span>=<span class="string">&quot;handleItemActive&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;&#123;&#123;index&#125;&#125;&quot;</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;tab_content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">// com.js</span><br><span class="line">Component(&#123;</span><br><span class="line">  properties: &#123;</span><br><span class="line">    tabItems:&#123;</span><br><span class="line">      type:Array,</span><br><span class="line">      value:[]</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br><span class="line">  /**</span><br><span class="line">   * 组件的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line"> &#125;,</span><br><span class="line">  /**</span><br><span class="line">   * 组件的方法列表</span><br><span class="line">   */</span><br><span class="line">  methods: &#123;</span><br><span class="line">    handleItemActive(e)&#123;</span><br><span class="line">      this.triggerEvent(&#x27;mytap&#x27;,&#x27;haha&#x27;);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="小结"   >
+          <a href="#小结" class="heading-link"><i class="fas fa-link"></i></a>小结</h3>
+      <ol>
+<li><p>标签名 是 中划线的⽅式 </p>
+</li>
+<li><p> 属性的⽅式 也是要中划线的⽅式 </p>
+</li>
+<li><p>其他情况可以使⽤驼峰命名</p>
+<p>a.组件的⽂件名如 <code>myHeader.js</code> 的等 </p>
+<p>b. 组件内的要接收的属性名 如 <code>innerText</code> </p>
+</li>
+<li><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html" >更多。。</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+</ol>
+
+        <h2 id="⼩程序⽣命周期"   >
+          <a href="#⼩程序⽣命周期" class="heading-link"><i class="fas fa-link"></i></a>⼩程序⽣命周期</h2>
+      <p>分为<strong>应⽤⽣命周期</strong>和<strong>⻚⾯⽣命周期</strong></p>
+<blockquote>
+<p>关于小程序前后台的定义和小程序的运行机制，请参考<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/operating-mechanism.html" >运行机制</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>章节。</p>
+</blockquote>
+
+        <h3 id="应⽤⽣命周期"   >
+          <a href="#应⽤⽣命周期" class="heading-link"><i class="fas fa-link"></i></a>应⽤⽣命周期</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onLaunch</td>
+<td>function</td>
+<td></td>
+<td>否</td>
+<td>监听⼩程序初始化。</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>function</td>
+<td></td>
+<td>否</td>
+<td>监听⼩程序启动或切前台。</td>
+</tr>
+<tr>
+<td>onHide</td>
+<td>function</td>
+<td></td>
+<td>否</td>
+<td>监听⼩程序切后台。</td>
+</tr>
+<tr>
+<td>onError</td>
+<td>function</td>
+<td></td>
+<td>否</td>
+<td>错误监听函数。</td>
+</tr>
+<tr>
+<td>onPageNotFound</td>
+<td>function</td>
+<td></td>
+<td>否</td>
+<td>⻚⾯不存在监听函数。</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="⻚⾯⽣命周期"   >
+          <a href="#⻚⾯⽣命周期" class="heading-link"><i class="fas fa-link"></i></a>⻚⾯⽣命周期</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>Object</td>
+<td>⻚⾯的初始数据</td>
+</tr>
+<tr>
+<td>onLoad</td>
+<td>function</td>
+<td>⽣命周期回调—监听⻚⾯加载</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>function</td>
+<td>⽣命周期回调—监听⻚⾯显⽰</td>
+</tr>
+<tr>
+<td>onReady</td>
+<td>function</td>
+<td>⽣命周期回调—监听⻚⾯初次渲染完成</td>
+</tr>
+<tr>
+<td>onHide</td>
+<td>function</td>
+<td>⽣命周期回调—监听⻚⾯隐藏</td>
+</tr>
+<tr>
+<td>onUnload</td>
+<td>function</td>
+<td>⽣命周期回调—监听⻚⾯卸载</td>
+</tr>
+<tr>
+<td>onPullDownRefresh</td>
+<td>function</td>
+<td>监听⽤⼾下拉动作</td>
+</tr>
+<tr>
+<td>onReachBottom</td>
+<td>function</td>
+<td>⻚⾯上拉触底事件的处理函数</td>
+</tr>
+<tr>
+<td>onShareAppMessage</td>
+<td>function</td>
+<td>⽤⼾点击右上⻆转发</td>
+</tr>
+<tr>
+<td>onPageScroll</td>
+<td>function</td>
+<td>⻚⾯滚动触发事件的处理函数</td>
+</tr>
+<tr>
+<td>onResize</td>
+<td>function</td>
+<td>⻚⾯尺⼨改变时触发，详⻅ 响应显⽰区域变化</td>
+</tr>
+<tr>
+<td>onTabItemTap</td>
+<td>function</td>
+<td>当前是 tab ⻚时，点击 tab 时触发</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="⻚⾯⽣命周期图解"   >
+          <a href="#⻚⾯⽣命周期图解" class="heading-link"><i class="fas fa-link"></i></a>⻚⾯⽣命周期图解</h3>
+      <p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://pic.downk.cc/item/5faf3f0b1cd1bbb86bcfaf9e.png" >
+      </p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://admin.wbf.ink">王克斌</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://admin.wbf.ink/2020/11/11/wxxcx/">https://admin.wbf.ink/2020/11/11/wxxcx/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/10/31/android-draw/"><span class="paginator-prev__text">Android自定义绘图</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">
+          微信小程序介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E5%BE%AE%E4%BF%A1%E2%BC%A9%E7%A8%8B%E5%BA%8F%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
+          为什么学微信⼩程序？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E2%BC%A9%E7%A8%8B%E5%BA%8F%E5%8E%86%E5%8F%B2"><span class="toc-number">3.</span> <span class="toc-text">
+          微信⼩程序历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%96%AF%E7%8B%82%E7%9A%84%E5%BE%AE%E4%BF%A1%E2%BC%A9%E7%A8%8B%E5%BA%8F"><span class="toc-number">4.</span> <span class="toc-text">
+          疯狂的微信⼩程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E7%9A%84%E2%BC%A9%E7%A8%8B%E5%BA%8F-%E4%B8%8D%E5%AE%B9%E5%BF%BD%E8%A7%86"><span class="toc-number">5.</span> <span class="toc-text">
+          还有其他的⼩程序 不容忽视</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E9%AA%8C"><span class="toc-number">6.</span> <span class="toc-text">
+          体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E2%BD%85%E5%BE%AE%E4%BF%A1%E2%BC%A9%E7%A8%8B%E5%BA%8F%E4%BD%93%E9%AA%8C"><span class="toc-number">6.1.</span> <span class="toc-text">
+          官⽅微信⼩程序体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%BC%98%E7%A7%80%E7%9A%84%E7%AC%AC%E4%B8%89%E2%BD%85%E2%BC%A9%E7%A8%8B%E5%BA%8F"><span class="toc-number">6.2.</span> <span class="toc-text">
+          其他优秀的第三⽅⼩程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">7.</span> <span class="toc-text">
+          环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7"><span class="toc-number">7.1.</span> <span class="toc-text">
+          注册账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96APPID"><span class="toc-number">7.2.</span> <span class="toc-text">
+          获取APPID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E2%BC%AF%E5%85%B7"><span class="toc-number">7.3.</span> <span class="toc-text">
+          开发⼯具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E2%BC%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E2%BC%A9%E7%A8%8B%E5%BA%8F"><span class="toc-number">8.</span> <span class="toc-text">
+          第⼀个微信⼩程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E2%BC%AF%E5%85%B7"><span class="toc-number">8.1.</span> <span class="toc-text">
+          打开微信开发者⼯具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE"><span class="toc-number">8.2.</span> <span class="toc-text">
+          新建小程序项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E9%A1%B9%E2%BD%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">8.3.</span> <span class="toc-text">
+          填写项⽬信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%8A%9F"><span class="toc-number">8.4.</span> <span class="toc-text">
+          成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E2%BC%AF%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="toc-number">9.</span> <span class="toc-text">
+          微信开发者⼯具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%BC%A9%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E2%BD%AC%E5%BD%95"><span class="toc-number">10.</span> <span class="toc-text">
+          ⼩程序结构⽬录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95"><span class="toc-number">10.1.</span> <span class="toc-text">
+          基本的项目目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">11.</span> <span class="toc-text">
+          小程序配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AEapp-json"><span class="toc-number">11.1.</span> <span class="toc-text">
+          全局配置app.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabbar"><span class="toc-number">11.2.</span> <span class="toc-text">
+          Tabbar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE-page-json"><span class="toc-number">11.3.</span> <span class="toc-text">
+          页面配置 page.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SiteMap%E9%85%8D%E7%BD%AE-%E4%BA%86%E8%A7%A3%E5%8D%B3%E5%8F%AF"><span class="toc-number">11.4.</span> <span class="toc-text">
+          SiteMap配置-了解即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">11.5.</span> <span class="toc-text">
+          模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-number">11.6.</span> <span class="toc-text">
+          数据绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%86%99%E6%B3%95"><span class="toc-number">11.6.1.</span> <span class="toc-text">
+          普通写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="toc-number">11.6.2.</span> <span class="toc-text">
+          组件属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bool%E7%B1%BB%E5%9E%8B"><span class="toc-number">11.6.3.</span> <span class="toc-text">
+          bool类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97"><span class="toc-number">11.7.</span> <span class="toc-text">
+          运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97"><span class="toc-number">11.7.1.</span> <span class="toc-text">
+          三元运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">11.7.2.</span> <span class="toc-text">
+          算数运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD"><span class="toc-number">11.7.3.</span> <span class="toc-text">
+          逻辑判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%90%E7%AE%97"><span class="toc-number">11.7.4.</span> <span class="toc-text">
+          字符串运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">11.7.5.</span> <span class="toc-text">
+          注意</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-number">12.</span> <span class="toc-text">
+          列表渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-for"><span class="toc-number">12.1.</span> <span class="toc-text">
+          wx:for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#block"><span class="toc-number">12.2.</span> <span class="toc-text">
+          block</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">13.</span> <span class="toc-text">
+          条件渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-if"><span class="toc-number">13.1.</span> <span class="toc-text">
+          wx:if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hidden"><span class="toc-number">13.2.</span> <span class="toc-text">
+          hidden</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A"><span class="toc-number">14.</span> <span class="toc-text">
+          小程序事件的绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wxml"><span class="toc-number">14.1.</span> <span class="toc-text">
+          wxml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#page"><span class="toc-number">14.2.</span> <span class="toc-text">
+          page</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%88%AB%E6%B3%A8%E6%84%8F"><span class="toc-number">14.3.</span> <span class="toc-text">
+          特别注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8FWXSS"><span class="toc-number">15.</span> <span class="toc-text">
+          样式WXSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D"><span class="toc-number">15.1.</span> <span class="toc-text">
+          尺寸单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E5%AF%BC%E2%BC%8A"><span class="toc-number">15.2.</span> <span class="toc-text">
+          样式导⼊</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">15.3.</span> <span class="toc-text">
+          选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8less"><span class="toc-number">15.4.</span> <span class="toc-text">
+          小程序中使用less</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E2%BB%85%E7%BB%84%E4%BB%B6"><span class="toc-number">16.</span> <span class="toc-text">
+          常⻅组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#view"><span class="toc-number">16.1.</span> <span class="toc-text">
+          view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text"><span class="toc-number">16.2.</span> <span class="toc-text">
+          text</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">16.2.1.</span> <span class="toc-text">
+          代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image"><span class="toc-number">16.3.</span> <span class="toc-text">
+          image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swiper"><span class="toc-number">16.4.</span> <span class="toc-text">
+          swiper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swiper-1"><span class="toc-number">16.5.</span> <span class="toc-text">
+          swiper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swiper-item"><span class="toc-number">16.6.</span> <span class="toc-text">
+          swiper-item</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navigator"><span class="toc-number">16.7.</span> <span class="toc-text">
+          navigator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rich-text"><span class="toc-number">16.8.</span> <span class="toc-text">
+          rich-text</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodes%E5%B1%9E%E6%80%A7"><span class="toc-number">16.9.</span> <span class="toc-text">
+          nodes属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#button"><span class="toc-number">16.10.</span> <span class="toc-text">
+          button</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#icon"><span class="toc-number">16.11.</span> <span class="toc-text">
+          icon</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#radio"><span class="toc-number">16.12.</span> <span class="toc-text">
+          radio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#checkbox"><span class="toc-number">16.13.</span> <span class="toc-text">
+          checkbox</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%BE%83%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="toc-number">17.</span> <span class="toc-text">
+          ⾃定义组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E2%BE%83%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="toc-number">17.1.</span> <span class="toc-text">
+          创建⾃定义组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E7%BB%84%E4%BB%B6"><span class="toc-number">17.1.1.</span> <span class="toc-text">
+          声明组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E7%BB%84%E4%BB%B6"><span class="toc-number">17.1.2.</span> <span class="toc-text">
+          编辑组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6"><span class="toc-number">17.1.3.</span> <span class="toc-text">
+          注册组件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%BC%95%E2%BC%8A%E2%BE%83%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="toc-number">17.2.</span> <span class="toc-text">
+          声明引⼊⾃定义组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%BB%9A%E2%BE%AF%E4%B8%AD%E4%BD%BF%E2%BD%A4%E2%BE%83%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="toc-number">17.3.</span> <span class="toc-text">
+          ⻚⾯中使⽤⾃定义组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7"><span class="toc-number">17.4.</span> <span class="toc-text">
+          其他属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%AE%B5%E4%B8%8E%E2%BD%B0%E4%BE%8B%E2%BD%85%E6%B3%95"><span class="toc-number">17.5.</span> <span class="toc-text">
+          定义段与⽰例⽅法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6-%E2%BE%83%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%8F%82"><span class="toc-number">17.6.</span> <span class="toc-text">
+          组件-⾃定义组件传参</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">17.6.1.</span> <span class="toc-text">
+          过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">17.7.</span> <span class="toc-text">
+          小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%BC%A9%E7%A8%8B%E5%BA%8F%E2%BD%A3%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">18.</span> <span class="toc-text">
+          ⼩程序⽣命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E2%BD%A4%E2%BD%A3%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">18.1.</span> <span class="toc-text">
+          应⽤⽣命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%BB%9A%E2%BE%AF%E2%BD%A3%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">18.2.</span> <span class="toc-text">
+          ⻚⾯⽣命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%BB%9A%E2%BE%AF%E2%BD%A3%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E8%A7%A3"><span class="toc-number">18.3.</span> <span class="toc-text">
+          ⻚⾯⽣命周期图解</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">王克斌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>王克斌</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.2.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.3.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"><div class="search-btns">使用搜索：<span class="search-btns-item search-btns-item--google"><i class="fab fa-google"></i>谷歌</span><span class="search-btns-item search-btns-item--bing"><i></i>必应</span><span class="search-btns-item search-btns-item--baidu"><i></i>百度</span></div></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'grw4YcPw3ywHzV1NWrmoCCPM-gzGzoHsz',
+    appKey: 'Aibrz8edzy0VnIB9CPG31qc5',
+    notify: true,
+    verify: true,
+    placeholder: 'Just go go',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.3.0"></script><script src="/js/stun-boot.js?v=2.3.0"></script><script src="/js/scroll.js?v=2.3.0"></script><script src="/js/header.js?v=2.3.0"></script><script src="/js/sidebar.js?v=2.3.0"></script><script type="application/json" src="/search.json"></script></body></html>
